@@ -1,0 +1,38 @@
+<html>
+
+
+
+<body>
+
+<h1>Countries to Pray for Today</h1>
+<p id="todayDate"></p>
+<ul id="list">
+ 
+</ul>
+</body>
+
+
+<script>
+
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    var jsondata = JSON.parse(this.responseText);
+	document.getElementById("todayDate").innerHTML = jsondata["startDate"];
+	var ulEl = document.getElementById("list");
+	for (let country in jsondata["countries"]){
+	  console.log(country);
+	  var liEl = document.createElement("LI");
+	  liEl.innerHTML = country + ": " + jsondata[country];
+	  ulEl.appendChild(liEl);
+	}
+    //document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "countries.json");
+  xhttp.send();
+}
+
+loadDoc();
+</script>
+
+</html>
