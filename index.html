@@ -23,7 +23,7 @@ function loadDoc() {
 	for (let country in jsondata["countries"]){
 	  console.log(country);
 	  var liEl = document.createElement("LI");
-	  liEl.innerHTML = country + ": " + jsondata[country];
+	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
 	  ulEl.appendChild(liEl);
 	}
     //document.getElementById("demo").innerHTML = this.responseText;
