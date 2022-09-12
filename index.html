@@ -6,9 +6,9 @@
 
 <h1>Countries to Pray for Today</h1>
 <p id="todayDate"></p>
-<ul id="list">
+<ol id="list">
  
-</ul>
+</ol>
 </body>
 
 
@@ -19,12 +19,12 @@ function loadDoc() {
   xhttp.onload = function() {
     var jsondata = JSON.parse(this.responseText);
 	document.getElementById("todayDate").innerHTML = jsondata["startDate"];
-	var ulEl = document.getElementById("list");
+	var olEl = document.getElementById("list");
 	for (let country in jsondata["countries"]){
 	  console.log(country);
 	  var liEl = document.createElement("LI");
 	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
-	  ulEl.appendChild(liEl);
+	  olEl.appendChild(liEl);
 	}
     //document.getElementById("demo").innerHTML = this.responseText;
   }
