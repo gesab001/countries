@@ -1,26 +1,17 @@
 {
-    "startDate": "Sunday 25 September 2022",
+    "startDate": "Monday 26 September 2022",
     "countries": {
-        "Brazil": 2,
+        "Brazil": 5,
         "Canada": 1,
-        "China": 6,
-        "Czech": 1,
-        "Denmark": 2,
-        "Hungary": 1,
-        "India": 3,
-        "Iran": 2,
-        "Korea": 1,
+        "China": 7,
+        "Colombia": 2,
+        "Ecuador": 1,
+        "Germany": 3,
+        "Guyana": 1,
+        "Iran": 1,
         "Mexico": 1,
-        "Netherlands": 1,
-        "Nigeria": 1,
-        "Philippines": 1,
-        "Poland": 1,
-        "Russia": 1,
-        "South Africa": 2,
-        "Turkey": 1,
-        "USA": 18,
-        "Ukraine": 1,
-        "United Kingdom": 1,
-        "Uzbekistan": 1
+        "Norway": 1,
+        "South Africa": 1,
+        "USA": 12
     }
 }
