@@ -1,17 +1,17 @@
 {
-    "startDate": "Monday 26 September 2022",
+    "startDate": "Tuesday 27 September 2022",
     "countries": {
-        "Brazil": 5,
+        "Brazil": 4,
+        "Bulgaria": 1,
         "Canada": 1,
-        "China": 7,
-        "Colombia": 2,
-        "Ecuador": 1,
-        "Germany": 3,
-        "Guyana": 1,
-        "Iran": 1,
-        "Mexico": 1,
-        "Norway": 1,
+        "Chile": 2,
+        "China": 5,
+        "Czech": 1,
+        "Korea": 2,
+        "Netherlands": 3,
+        "New Zealand": 1,
+        "Singapore": 1,
         "South Africa": 1,
-        "USA": 12
+        "USA": 16
     }
 }
