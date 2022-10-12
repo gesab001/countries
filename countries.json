@@ -1,20 +1,25 @@
 {
-    "startDate": "Monday 10 October 2022",
+    "startDate": "Tuesday 11 October 2022",
     "countries": {
-        "Austria": 1,
-        "Brazil": 5,
-        "Chile": 1,
-        "China": 4,
-        "Colombia": 1,
-        "Costa Rica": 1,
-        "Czech": 1,
-        "India": 3,
+        "Brazil": 4,
+        "Canada": 1,
+        "Chile": 2,
+        "China": 8,
+        "Finland": 1,
+        "India": 1,
         "Iran": 1,
+        "Israel": 1,
         "Kazakhstan": 1,
+        "Lebanon": 1,
         "Mexico": 1,
+        "Netherlands": 2,
         "Pakistan": 1,
+        "Poland": 1,
+        "Tanzania": 1,
         "T\u00fcrkiye": 1,
-        "USA": 11,
-        "Uganda": 3
+        "USA": 8,
+        "Ukraine": 2,
+        "United Arab Emirates": 1,
+        "Yemen": 1
     }
 }
