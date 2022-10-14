@@ -54,17 +54,21 @@
 
 
    function filterItems(arr, query) {
-      return arr.filter((el) => el["CountryName"].toLowerCase().includes(query.toLowerCase()));
+      return arr.filter((el) => el["CountryName"].toLowerCase().replace(" ", "").includes(query.toLowerCase().replace(" ", "")));
    }
 
-   function addMarkers(country){
+   function addMarkers(value){
+
+    try{
+    var country = value;
     if (country==="USA"){
 	   country = "United States";
 	}
 	if (country==="Türkiye"){
 	   country = "Turkey";
 	}
-    try{
+	   console.log("country is " + country);
+
      var countryObj = filterItems(capitalcities, country)[0];
      var latitude = countryObj["CapitalLatitude"];
      var longitude = countryObj["CapitalLongitude"];
@@ -76,8 +80,17 @@
     }
    }
    
-   function goToCountry(country){
+   function goToCountry(value){
+    var country = value;
+    if (country==="USA"){
+	   console.log("country is USA");
+	   country = "United States";
+	}
+	if (country==="Türkiye"){
+	   country = "Turkey";
+	}
       try{
+	  
 	   var countryObj = filterItems(capitalcities, country)[0];
 	   var latitude = countryObj["CapitalLatitude"];
 	   var longitude = countryObj["CapitalLongitude"];
@@ -85,7 +98,7 @@
 	   console.log(longitude); // ['apple', 'grapes']   
        map.panTo(new L.LatLng(latitude, longitude));	   
 	  }catch{
-        console.log("error");
+        console.log("error " + country);
       }	  
    }
    
@@ -115,6 +128,7 @@ function loadDoc() {
 	var olEl = document.getElementById("list");
 	for (let country in jsondata["countries"]){
 	  console.log(country);
+	  
 	  addMarkers(country);
 	  var liEl = document.createElement("LI");
 	  liEl.style.cursor = "pointer";
