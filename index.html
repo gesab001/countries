@@ -49,6 +49,7 @@
 	}).addTo(map);
 	
     var capitalcities = getCapitalCities();
+	console.log(capitalcities);
 	
 
 
@@ -57,17 +58,9 @@
       return arr.filter((el) => el["CountryName"].toLowerCase().replace(" ", "").includes(query.toLowerCase().replace(" ", "")));
    }
 
-   function addMarkers(value){
+   function addMarkers(country){
 
     try{
-    var country = value;
-    if (country==="USA"){
-	   country = "United States";
-	}
-	if (country==="Türkiye"){
-	   country = "Turkey";
-	}
-	   console.log("country is " + country);
 
      var countryObj = filterItems(capitalcities, country)[0];
      var latitude = countryObj["CapitalLatitude"];
@@ -75,20 +68,13 @@
      console.log(latitude); // ['apple', 'grapes']
      console.log(longitude); // ['apple', 'grapes']
      var marker = L.marker([latitude, longitude]).addTo(map);
-    }catch{
-      console.log("error " + country);
+    }catch (err){
+      console.log(err);
     }
    }
    
-   function goToCountry(value){
-    var country = value;
-    if (country==="USA"){
-	   console.log("country is USA");
-	   country = "United States";
-	}
-	if (country==="Türkiye"){
-	   country = "Turkey";
-	}
+   function goToCountry(country){
+
       try{
 	  
 	   var countryObj = filterItems(capitalcities, country)[0];
@@ -97,8 +83,8 @@
 	   console.log(latitude); // ['apple', 'grapes']
 	   console.log(longitude); // ['apple', 'grapes']   
        map.panTo(new L.LatLng(latitude, longitude));	   
-	  }catch{
-        console.log("error " + country);
+	  }catch (err){
+        console.log(err);
       }	  
    }
    
@@ -128,13 +114,14 @@ function loadDoc() {
 	var olEl = document.getElementById("list");
 	for (let country in jsondata["countries"]){
 	  console.log(country);
-	  
-	  addMarkers(country);
+	  leafletCountry = country.replace("USA", "United States");
+	  leafletCountry = country.replace("Türkiye", "Turkey");
+	  addMarkers(leafletCountry);
 	  var liEl = document.createElement("LI");
 	  liEl.style.cursor = "pointer";
 	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
 	  liEl.onclick = function () {
-         goToCountry(country);
+         goToCountry(leafletCountry);
       };   
 	  olEl.appendChild(liEl);
 	}
