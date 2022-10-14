@@ -1,7 +1,33 @@
 <html>
 
+<head>
 
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+	 
+	  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+ <script src="capitalcities.js"></script>
+</head>
 
+<style>
+
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+#map { width: 600px; height: 400px;}
+
+</style>
 <body>
 
 <h1>Countries to Pray for Today</h1>
@@ -9,11 +35,78 @@
 <ol id="list">
  
 </ol>
+
+ <div id="map"></div>
+
 </body>
 
 
 <script>
+	var map = L.map('map').setView([51.505, -0.09], 7);
+	var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+	
+    var capitalcities = getCapitalCities();
+	
 
+
+
+   function filterItems(arr, query) {
+      return arr.filter((el) => el["CountryName"].toLowerCase().includes(query.toLowerCase()));
+   }
+
+   function addMarkers(country){
+    if (country==="USA"){
+	   country = "United States";
+	}
+	if (country==="Türkiye"){
+	   country = "Turkey";
+	}
+    try{
+     var countryObj = filterItems(capitalcities, country)[0];
+     var latitude = countryObj["CapitalLatitude"];
+     var longitude = countryObj["CapitalLongitude"];
+     console.log(latitude); // ['apple', 'grapes']
+     console.log(longitude); // ['apple', 'grapes']
+     var marker = L.marker([latitude, longitude]).addTo(map);
+    }catch{
+      console.log("error " + country);
+    }
+   }
+   
+   function goToCountry(country){
+      try{
+	   var countryObj = filterItems(capitalcities, country)[0];
+	   var latitude = countryObj["CapitalLatitude"];
+	   var longitude = countryObj["CapitalLongitude"];
+	   console.log(latitude); // ['apple', 'grapes']
+	   console.log(longitude); // ['apple', 'grapes']   
+       map.panTo(new L.LatLng(latitude, longitude));	   
+	  }catch{
+        console.log("error");
+      }	  
+   }
+   
+
+
+	
+/*
+	var circle = L.circle([51.508, -0.11], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500
+	}).addTo(map);
+*/
+
+	
+function onMapClick(e) {
+    alert("You clicked the map at " + e.zoom);
+}
+
+map.on('click', onMapClick);	
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
@@ -22,8 +115,13 @@ function loadDoc() {
 	var olEl = document.getElementById("list");
 	for (let country in jsondata["countries"]){
 	  console.log(country);
+	  addMarkers(country);
 	  var liEl = document.createElement("LI");
+	  liEl.style.cursor = "pointer";
 	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
+	  liEl.onclick = function () {
+         goToCountry(country);
+      };   
 	  olEl.appendChild(liEl);
 	}
     //document.getElementById("demo").innerHTML = this.responseText;
