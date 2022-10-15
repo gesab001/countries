@@ -48,8 +48,7 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-    var capitalcities = getCapitalCities();
-	console.log(capitalcities);
+
 	
 
 
@@ -58,34 +57,36 @@
       return arr.filter((el) => el["CountryName"].toLowerCase().replace(" ", "").includes(query.toLowerCase().replace(" ", "")));
    }
 
-   function addMarkers(country){
+   function addMarkers(latitude, longitude){
 
     try{
-
-     var countryObj = filterItems(capitalcities, country)[0];
-     var latitude = countryObj["CapitalLatitude"];
-     var longitude = countryObj["CapitalLongitude"];
-     console.log(latitude); // ['apple', 'grapes']
-     console.log(longitude); // ['apple', 'grapes']
      var marker = L.marker([latitude, longitude]).addTo(map);
     }catch (err){
       console.log(err);
     }
    }
    
-   function goToCountry(country){
-
-      try{
+   function getCoordinates(capitalcities, country){
+     var result = {}
+     try{
 	  
 	   var countryObj = filterItems(capitalcities, country)[0];
 	   var latitude = countryObj["CapitalLatitude"];
 	   var longitude = countryObj["CapitalLongitude"];
+	   result["lat"] = latitude;
+	   result["long"] = longitude
 	   console.log(latitude); // ['apple', 'grapes']
-	   console.log(longitude); // ['apple', 'grapes']   
-       map.panTo(new L.LatLng(latitude, longitude));	   
+	   console.log(longitude); // ['apple', 'grapes']    
 	  }catch (err){
         console.log(err);
-      }	  
+      }	  	  
+     return result;	  
+   }
+   function goToCountry(latitude, longitude){
+
+ 
+       map.panTo(new L.LatLng(latitude, longitude));	   
+
    }
    
 
@@ -110,17 +111,26 @@ function loadDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     var jsondata = JSON.parse(this.responseText);
+	var capitalcities = jsondata["capitalCities"];
+	console.log(capitalcities);
 	document.getElementById("todayDate").innerHTML = jsondata["startDate"];
 	var olEl = document.getElementById("list");
+    var lat;
+	var longitude;
 	for (let country in jsondata["countries"]){
 	  console.log(country);
+	     var coord = {};
+
 		 if (country==="USA"){
-		          addMarkers("United States");
-
+	        coord = getCoordinates(capitalcities, "United States");
+	   	    lat = coord["lat"];  
+		    longitude = coord["long"];
 		 }else{
-		    		          addMarkers(country);
-
+		    coord = getCoordinates(capitalcities, country);
+	   	    lat = coord["lat"];  
+		    longitude = coord["long"];
 		 }
+		 addMarkers(lat, longitude);
 	  var liEl = document.createElement("LI");
 	  liEl.style.cursor = "pointer";
 	  liEl.id = country;
@@ -128,14 +138,20 @@ function loadDoc() {
 	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
 	  liEl.onclick = function (evt) {
 	     console.log(evt.target.id);
-		 if (evt.target.id==="USA"){
-		          goToCountry("United States");
+		 var country = evt.target.id;
+	     var coord = {};
 
-		
+		 if (country==="USA"){
+
+	        coord = getCoordinates(capitalcities, "United States");
+	   	    lat = coord["lat"];  
+		    longitude = coord["long"];
 		 }else{
-		    		          goToCountry(evt.target.id);
-
+		    coord = getCoordinates(capitalcities, country);
+	   	    lat = coord["lat"];  
+		    longitude = coord["long"];
 		 }
+		 goToCountry(lat, longitude);
       };   
 	  olEl.appendChild(liEl);
 	}
