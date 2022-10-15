@@ -11,6 +11,8 @@
      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
      crossorigin=""></script>
  <script src="capitalcities.js"></script>
+ <script src="toword.js"></script>
+
 </head>
 
 <style>
@@ -31,6 +33,9 @@
 <body>
 
 <h1>Countries to Pray for Today</h1>
+<p id="total"></p>
+<p id="totalInWords"></p>
+
 <p id="todayDate"></p>
 <ol id="list">
  
@@ -117,6 +122,7 @@ function loadDoc() {
 	var olEl = document.getElementById("list");
     var lat;
 	var longitude;
+	var totalDownloads = 0;
 	for (let country in jsondata["countries"]){
 	  console.log(country);
 	     var coord = {};
@@ -135,7 +141,8 @@ function loadDoc() {
 	  liEl.style.cursor = "pointer";
 	  liEl.id = country;
 	  
-	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
+	  liEl.innerHTML = country + ": " + jsondata["countries"][country].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ("+doConvert(jsondata["countries"][country]) + ")";
+	  totalDownloads = totalDownloads + parseInt(jsondata["countries"][country]) ;
 	  liEl.onclick = function (evt) {
 	     console.log(evt.target.id);
 		 var country = evt.target.id;
@@ -154,6 +161,9 @@ function loadDoc() {
 		 goToCountry(lat, longitude);
       };   
 	  olEl.appendChild(liEl);
+
+
+	  document.getElementById("total").innerHTML = "TOTAL: " + totalDownloads.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ("+doConvert(totalDownloads) + ")";
 	}
     //document.getElementById("demo").innerHTML = this.responseText;
   }
