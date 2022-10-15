@@ -114,14 +114,28 @@ function loadDoc() {
 	var olEl = document.getElementById("list");
 	for (let country in jsondata["countries"]){
 	  console.log(country);
-	  leafletCountry = country.replace("USA", "United States");
-	  leafletCountry = country.replace("Türkiye", "Turkey");
-	  addMarkers(leafletCountry);
+		 if (country==="USA"){
+		          addMarkers("United States");
+
+		 }else{
+		    		          addMarkers(country);
+
+		 }
 	  var liEl = document.createElement("LI");
 	  liEl.style.cursor = "pointer";
+	  liEl.id = country;
+	  
 	  liEl.innerHTML = country + ": " + jsondata["countries"][country];
-	  liEl.onclick = function () {
-         goToCountry(leafletCountry);
+	  liEl.onclick = function (evt) {
+	     console.log(evt.target.id);
+		 if (evt.target.id==="USA"){
+		          goToCountry("United States");
+
+		
+		 }else{
+		    		          goToCountry(evt.target.id);
+
+		 }
       };   
 	  olEl.appendChild(liEl);
 	}
