@@ -27,12 +27,33 @@
 			max-width: 100%;
 			max-height: 100%;
 		}
-#map { width: 600px; height: 400px;}
+#map { 
+text-align: right;
 
+width: 600px; 
+
+height: 400px;
+
+}
+
+.sticky{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+right:5;
+top:5;
+width: 600px;
+float: right;
+background-color:red;
+}
+
+body{
+  height: 100%;
+}
 </style>
 <body>
+<div style="height:100%;">
+<h1 >Countries to Pray for Today</h1>
 
-<h1>Countries to Pray for Today</h1>
 <p id="total"></p>
 <p id="totalInWords"></p>
 
@@ -44,11 +65,21 @@
   <option name="today" value="today">TODAY</option>
 
 </select>
+
+<div> 
+
+ 
+
+<div class="sticky">
+
+  <div id="map" ></div>
+
+</div>
 <ol id="list">
  
 </ol>
-
- <div id="map"></div>
+</div>
+</div>
 
 </body>
 
