@@ -36,7 +36,14 @@
 <p id="total"></p>
 <p id="totalInWords"></p>
 
+
 <p id="todayDate"></p>
+
+<select id="salePeriod" onchange="changeSalePeriod()">
+  <option name="alltime" value="alltime">ALL TIME</option>
+  <option name="today" value="today">TODAY</option>
+
+</select>
 <ol id="list">
  
 </ol>
@@ -112,18 +119,19 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);	
-function loadDoc() {
+function loadDoc(salePeriod) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     var jsondata = JSON.parse(this.responseText);
 	var capitalcities = jsondata["capitalCities"];
 	console.log(capitalcities);
-	document.getElementById("todayDate").innerHTML = jsondata["startDate"];
+	document.getElementById("todayDate").innerHTML = jsondata[salePeriod]["startDate"];
 	var olEl = document.getElementById("list");
+	olEl.innerHTML = "";
     var lat;
 	var longitude;
 	var totalDownloads = 0;
-	for (let country in jsondata["countries"]){
+	for (let country in jsondata[salePeriod]["countries"]){
 	  console.log(country);
 	     var coord = {};
 
@@ -141,8 +149,8 @@ function loadDoc() {
 	  liEl.style.cursor = "pointer";
 	  liEl.id = country;
 	  
-	  liEl.innerHTML = country + ": " + jsondata["countries"][country].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ("+doConvert(jsondata["countries"][country]) + ")";
-	  totalDownloads = totalDownloads + parseInt(jsondata["countries"][country]) ;
+	  liEl.innerHTML = country + ": " + jsondata[salePeriod]["countries"][country].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ("+doConvert(jsondata[salePeriod]["countries"][country]) + ")";
+	  totalDownloads = totalDownloads + parseInt(jsondata[salePeriod]["countries"][country]) ;
 	  liEl.onclick = function (evt) {
 	     console.log(evt.target.id);
 		 var country = evt.target.id;
@@ -171,7 +179,12 @@ function loadDoc() {
   xhttp.send();
 }
 
-loadDoc();
+loadDoc("alltime");
+
+function changeSalePeriod(){
+   var salePeriod = document.getElementById("salePeriod").value;
+   loadDoc(salePeriod);
+}
 </script>
 
 </html>
