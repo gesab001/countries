@@ -1962,33 +1962,28 @@
         }
     ],
     "today": {
-        "startDate": "Wednesday 09 November 2022",
+        "startDate": "Thursday 10 November 2022",
         "countries": {
-            "Angola": 1,
-            "Australia": 1,
+            "Argentina": 1,
             "Brazil": 2,
-            "Canada": 1,
-            "Chile": 2,
-            "China": 4,
-            "Denmark": 2,
-            "Dominican Republic": 1,
-            "Indonesia": 1,
-            "Iran": 1,
-            "Israel": 1,
-            "Jamaica": 1,
-            "Korea": 7,
-            "New Zealand": 1,
-            "Peru": 1,
+            "Chile": 3,
+            "China": 8,
+            "Cuba": 2,
+            "France": 1,
+            "Germany": 1,
+            "Netherlands": 1,
+            "New Zealand": 2,
+            "Nigeria": 1,
             "Romania": 1,
             "Russia": 2,
-            "Slovenia": 1,
-            "T\u00fcrkiye": 1,
-            "USA": 13,
-            "Ukraine": 1
+            "South Africa": 1,
+            "Switzerland": 1,
+            "USA": 14,
+            "United Kingdom": 3
         }
     },
     "alltime": {
-        "startDate": "Wednesday 09 November 2022",
+        "startDate": "Thursday 10 November 2022",
         "countries": {
             "Afghanistan": 18,
             "Albania": 23,
