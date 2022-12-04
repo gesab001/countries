@@ -1962,29 +1962,15 @@
         }
     ],
     "today": {
-        "startDate": "Friday 02 December 2022",
+        "startDate": "Saturday 03 December 2022",
         "countries": {
-            "Bahamas": 1,
-            "Brazil": 9,
-            "Chile": 1,
-            "China": 3,
-            "DR Congo": 1,
-            "France": 2,
-            "Guatemala": 2,
-            "Honduras": 1,
-            "Hungary": 2,
-            "India": 1,
-            "Iran": 2,
-            "Korea": 3,
-            "Lebanon": 1,
-            "Mexico": 1,
-            "Nicaragua": 1,
-            "Saudi Arabia": 1,
-            "USA": 14
+            "Brazil": 2,
+            "Canada": 1,
+            "Korea": 1
         }
     },
     "alltime": {
-        "startDate": "Friday 02 December 2022",
+        "startDate": "Saturday 03 December 2022",
         "countries": {
             "Afghanistan": 18,
             "Albania": 23,
@@ -2009,7 +1995,7 @@
             "Bolivia": 50,
             "Bosnia and Herzegovina": 53,
             "Botswana": 19,
-            "Brazil": 3870,
+            "Brazil": 3872,
             "British Virgin Islands": 2,
             "Brunei Darussalam": 2,
             "Bulgaria": 28,
@@ -2017,7 +2003,7 @@
             "Burundi": 7,
             "Cambodia": 68,
             "Cameroon": 106,
-            "Canada": 2104,
+            "Canada": 2105,
             "Cape Verde": 9,
             "Cayman Islands": 9,
             "Central African Rep.": 2,
@@ -2075,7 +2061,7 @@
             "Jordan": 32,
             "Kazakhstan": 40,
             "Kenya": 104,
-            "Korea": 2123,
+            "Korea": 2124,
             "Kosovo": 4,
             "Kuwait": 77,
             "Kyrgyzstan": 31,
