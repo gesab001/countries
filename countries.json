@@ -1962,23 +1962,17 @@
         }
     ],
     "today": {
-        "startDate": "Tuesday 27 December 2022",
+        "startDate": "Wednesday 28 December 2022",
         "countries": {
-            "Azerbaijan": 1,
             "Brazil": 1,
-            "Iran": 2,
-            "Poland": 1,
-            "United Kingdom": 1
+            "Korea": 1
         }
     },
     "alltime": {
-        "startDate": "Tuesday 27 December 2022",
+        "startDate": "Wednesday 28 December 2022",
         "countries": {
-            "Azerbaijan": 1,
             "Brazil": 1,
-            "Iran": 2,
-            "Poland": 1,
-            "United Kingdom": 1
+            "Korea": 1
         }
     }
 }
