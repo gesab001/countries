@@ -1962,13 +1962,13 @@
         }
     ],
     "today": {
-        "startDate": "Saturday 31 December 2022",
+        "startDate": "Wednesday 04 January 2023",
         "countries": {
-            "Korea": 1
+            "USA": 3
         }
     },
     "alltime": {
-        "startDate": "Tuesday 03 January 2023",
+        "startDate": "Wednesday 04 January 2023",
         "countries": {
             "Afghanistan": 18,
             "Albania": 23,
