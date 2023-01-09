@@ -1962,13 +1962,14 @@
         }
     ],
     "today": {
-        "startDate": "Wednesday 04 January 2023",
+        "startDate": "Sunday 08 January 2023",
         "countries": {
-            "USA": 3
+            "Austria": 1,
+            "United Kingdom": 1
         }
     },
     "alltime": {
-        "startDate": "Saturday 07 January 2023",
+        "startDate": "Sunday 08 January 2023",
         "countries": {
             "Afghanistan": 18,
             "Albania": 23,
@@ -1979,7 +1980,7 @@
             "Armenia": 26,
             "Aruba": 7,
             "Australia": 924,
-            "Austria": 70,
+            "Austria": 71,
             "Azerbaijan": 37,
             "Bahamas": 63,
             "Bahrain": 23,
@@ -2146,7 +2147,7 @@
             "Uganda": 184,
             "Ukraine": 157,
             "United Arab Emirates": 208,
-            "United Kingdom": 1113,
+            "United Kingdom": 1114,
             "Uruguay": 7,
             "Uzbekistan": 87,
             "Vanuatu": 4,
