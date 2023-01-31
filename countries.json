@@ -1962,13 +1962,18 @@
         }
     ],
     "today": {
-        "startDate": "Sunday 22 January 2023",
+        "startDate": "Monday 30 January 2023",
         "countries": {
-            "Beta Test Store": 2
+            "Brazil": 1,
+            "China": 6,
+            "France": 2,
+            "Germany": 1,
+            "Russia": 2,
+            "United Kingdom": 1
         }
     },
     "alltime": {
-        "startDate": "Sunday 29 January 2023",
+        "startDate": "Monday 30 January 2023",
         "countries": {
             "Afghanistan": 18,
             "Albania": 23,
@@ -1994,7 +1999,7 @@
             "Bolivia": 50,
             "Bosnia and Herzegovina": 53,
             "Botswana": 19,
-            "Brazil": 3880,
+            "Brazil": 3881,
             "British Virgin Islands": 2,
             "Brunei Darussalam": 2,
             "Bulgaria": 29,
@@ -2007,7 +2012,7 @@
             "Cayman Islands": 9,
             "Central African Rep.": 2,
             "Chile": 683,
-            "China": 2342,
+            "China": 2348,
             "Chinese Hong Kong": 92,
             "Chinese Macao": 18,
             "Chinese Taiwan": 111,
@@ -2032,11 +2037,11 @@
             "FYROM": 20,
             "Fiji": 7,
             "Finland": 29,
-            "France": 333,
+            "France": 335,
             "Gabon": 45,
             "Gambia": 9,
             "Georgia": 45,
-            "Germany": 843,
+            "Germany": 844,
             "Ghana": 366,
             "Greece": 42,
             "Grenada": 1,
@@ -2111,7 +2116,7 @@
             "Puerto Rico": 74,
             "Qatar": 38,
             "Romania": 161,
-            "Russia": 552,
+            "Russia": 554,
             "Rwanda": 34,
             "Samoa": 4,
             "Saudi Arabia": 165,
@@ -2147,7 +2152,7 @@
             "Uganda": 184,
             "Ukraine": 157,
             "United Arab Emirates": 208,
-            "United Kingdom": 1115,
+            "United Kingdom": 1116,
             "Uruguay": 7,
             "Uzbekistan": 87,
             "Vanuatu": 4,
