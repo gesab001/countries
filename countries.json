@@ -1962,26 +1962,29 @@
         }
     ],
     "today": {
-        "startDate": "Saturday 24 June 2023",
+        "startDate": "Sunday 25 June 2023",
         "countries": {
-            "Benin": 1,
-            "Brazil": 6,
-            "China": 3,
-            "Dominican Republic": 1,
+            "Austria": 1,
+            "Brazil": 5,
+            "China": 1,
+            "Chinese Taiwan": 1,
+            "Cote D Ivoire": 1,
+            "France": 1,
             "Germany": 1,
-            "India": 2,
-            "Iran": 1,
             "Israel": 1,
-            "Korea": 1,
-            "Mexico": 2,
+            "Kenya": 3,
+            "Korea": 2,
+            "Mexico": 3,
+            "Monaco": 1,
+            "Myanmar": 1,
             "Nigeria": 1,
-            "Russia": 1,
-            "South Africa": 1,
-            "USA": 13
+            "Peru": 2,
+            "USA": 8,
+            "Vietnam": 1
         }
     },
     "alltime": {
-        "startDate": "Saturday 24 June 2023",
+        "startDate": "Sunday 25 June 2023",
         "countries": {
             "Afghanistan": 19,
             "Albania": 25,
