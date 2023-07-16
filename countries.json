@@ -1962,25 +1962,23 @@
         }
     ],
     "today": {
-        "startDate": "Friday 14 July 2023",
+        "startDate": "Saturday 15 July 2023",
         "countries": {
-            "Angola": 1,
             "Brazil": 1,
-            "China": 3,
-            "Germany": 1,
-            "India": 4,
-            "Iran": 1,
-            "Korea": 1,
-            "Netherlands": 1,
-            "Poland": 1,
-            "Russia": 1,
-            "South Africa": 1,
-            "USA": 11,
-            "United Kingdom": 3
+            "Bulgaria": 1,
+            "China": 1,
+            "Germany": 2,
+            "Kazakhstan": 1,
+            "Korea": 2,
+            "Mexico": 2,
+            "Netherlands": 3,
+            "Spain": 1,
+            "USA": 9,
+            "Zimbabwe": 1
         }
     },
     "alltime": {
-        "startDate": "Friday 14 July 2023",
+        "startDate": "Saturday 15 July 2023",
         "countries": {
             "Afghanistan": 20,
             "Albania": 25,
