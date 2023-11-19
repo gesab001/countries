@@ -1962,25 +1962,25 @@
         }
     ],
     "today": {
-        "startDate": "Friday 17 November 2023",
+        "startDate": "Saturday 18 November 2023",
         "countries": {
-            "Brazil": 4,
-            "China": 1,
-            "Chinese Hong Kong": 1,
-            "Colombia": 1,
-            "France": 2,
-            "India": 1,
+            "China": 9,
+            "Costa Rica": 1,
+            "Iran": 1,
+            "Iraq": 1,
+            "Italy": 1,
             "Korea": 1,
             "Netherlands": 1,
-            "Nigeria": 1,
-            "Poland": 1,
+            "Panama": 1,
+            "Romania": 1,
             "South Africa": 1,
             "USA": 9,
-            "Uzbekistan": 1
+            "Uganda": 1,
+            "Vietnam": 1
         }
     },
     "alltime": {
-        "startDate": "Friday 17 November 2023",
+        "startDate": "Saturday 18 November 2023",
         "countries": {
             "Afghanistan": 20,
             "Albania": 27,
