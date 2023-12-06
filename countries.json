@@ -1962,30 +1962,29 @@
         }
     ],
     "today": {
-        "startDate": "Monday 04 December 2023",
+        "startDate": "Tuesday 05 December 2023",
         "countries": {
-            "Brazil": 2,
-            "China": 2,
-            "Chinese Hong Kong": 1,
-            "Ethiopia": 1,
+            "Brazil": 3,
+            "Canada": 1,
+            "China": 4,
+            "Colombia": 1,
+            "Ecuador": 1,
             "France": 1,
+            "Gabon": 1,
             "Germany": 1,
-            "Greece": 1,
+            "Iran": 1,
             "Korea": 1,
             "Madagascar": 1,
-            "Mexico": 1,
-            "Netherlands": 4,
-            "Nigeria": 2,
-            "Philippines": 1,
-            "Poland": 3,
-            "Romania": 1,
-            "Sweden": 1,
-            "USA": 18,
-            "United Kingdom": 3
+            "Panama": 1,
+            "Poland": 1,
+            "USA": 15,
+            "Uganda": 1,
+            "United Arab Emirates": 1,
+            "Uzbekistan": 4
         }
     },
     "alltime": {
-        "startDate": "Monday 04 December 2023",
+        "startDate": "Tuesday 05 December 2023",
         "countries": {
             "Afghanistan": 21,
             "Albania": 27,
